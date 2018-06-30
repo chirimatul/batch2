@@ -1,0 +1,91 @@
+<!-- <form> -->
+  <div class="lineClass">First name
+    <input type="text" [(ngModel)]="user.fName">
+    <br>
+</div>
+<div class="lineClass"> Last name
+    <input type="text" [(ngModel)]="user.lName">
+    <br>
+</div>
+<div class="lineClass">City name
+    <input type="text" [(ngModel)]="user.city">
+    <br>
+</div>
+
+<div class="lineClass">User Image
+    <img [src]="user.userImage" style="height:50px; width:50px">
+    <br>
+</div>
+
+<div class="lineClass">Country
+    <select [(ngModel)]="user.userCountry">
+        <option *ngFor="let country of 
+        contries" [value]="country">
+            {{country}}</option>
+        <!-- <option value="India">India</option>
+        <option value="India">USA</option>
+        <option value="India">Englan</option>
+        <option value="India">Canada</option>
+        <option value="India">AUS</option> -->
+    </select>
+    <br>
+</div>
+
+<div class="lineClass">available contries
+    <div *ngFor="let country of contries">
+        <label>{{country}}</label>
+        <br>
+    </div>
+</div>
+
+
+<div class="lineClass">User DOB
+    <input type="date" [(ngModel)]="user.dobString">
+    <br>
+</div>
+
+<div class="lineClass">User Gender
+    <!-- <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female -->
+
+    <input type="radio" name="gender" [(ngModel)]="user.gender" value="Male"> Male
+    <input type="radio" name="gender"  [(ngModel)]="user.gender" value="Female"> Female
+
+    <br>
+</div>
+
+<div class="lineClass">User hobbies
+
+    <input type="checkbox" [(ngModel)]="user.cansing"> singing
+    <input type="checkbox" [(ngModel)]="user.canDance"> dancing
+    <input type="checkbox" [(ngModel)]="user.canRead"> reading
+    <input type="checkbox" [(ngModel)]="user.canSwim"> swimming
+    <br>
+</div>
+
+<div class="lineClass">User favouite color
+    
+        <input type="color"
+         [(ngModel)]="user.favCor">
+        
+        <br>
+    </div>
+
+
+
+<input type="button" value="Save" (click)="saveInfo()">
+<!-- </form> -->
+
+<div>
+    To check two way binding {{user.fName}} {{user.lName}}
+    <br> User country : {{user.userCountry}}
+    <br> User DOB : {{user.dobString}}
+    <br> User gender : {{user.gender}}
+    <br> User sing : {{user.cansing}}
+    <br> User dance : {{user.canDance}}
+    <br>
+    <div style="height:20px; width:20px;" 
+    [style.backgroundColor]="user.favCor">
+
+    </div>
+</div>

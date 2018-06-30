@@ -1,0 +1,91 @@
+<!-- <form> -->
+  <div class="lineClass">First name
+    <input type="text" [(ngModel)]="fName">
+    <br>
+</div>
+<div class="lineClass"> Last name
+    <input type="text" [(ngModel)]="lName">
+    <br>
+</div>
+<div class="lineClass">{{cityheader}}
+    <input type="text" [(ngModel)]="city">
+    <br>
+</div>
+
+<div class="lineClass">User Image
+    <img [src]="userImage" style="height:50px; width:50px">
+    <br>
+</div>
+
+<div class="lineClass">Country
+    <select [(ngModel)]="userCountry">
+        <option *ngFor="let country of 
+        contries" [value]="country">
+            {{country}}</option>
+        <!-- <option value="India">India</option>
+        <option value="India">USA</option>
+        <option value="India">Englan</option>
+        <option value="India">Canada</option>
+        <option value="India">AUS</option> -->
+    </select>
+    <br>
+</div>
+
+<div class="lineClass">available contries
+    <div *ngFor="let country of contries">
+        <label>{{country}}</label>
+        <br>
+    </div>
+</div>
+
+
+<div class="lineClass">User DOB
+    <input type="date" [(ngModel)]="dobString">
+    <br>
+</div>
+
+<div class="lineClass">User Gender
+    <!-- <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female -->
+
+    <input type="radio" name="gender" [(ngModel)]="gender" value="Male"> Male
+    <input type="radio" name="gender"  [(ngModel)]="gender" value="Female"> Female
+
+    <br>
+</div>
+
+<div class="lineClass">User hobbies
+
+    <input type="checkbox" [(ngModel)]="cansing"> singing
+    <input type="checkbox" [(ngModel)]="canDance"> dancing
+    <input type="checkbox" [(ngModel)]="canRead"> reading
+    <input type="checkbox" [(ngModel)]="canSwim"> swimming
+    <br>
+</div>
+
+<div class="lineClass">User favouite color
+    
+        <input type="color"
+         [(ngModel)]="favCor">
+        
+        <br>
+    </div>
+
+
+
+<input type="button" value="Save" (click)="saveInfo()">
+<!-- </form> -->
+
+<div>
+    To check two way binding {{fName}} {{lName}}
+    <br> User country : {{userCountry}}
+    <br> User DOB : {{dobString}}
+    <br> User gender : {{gender}}
+    <br> User sing : {{cansing}}
+    <br> User dance : {{canDance}}
+    <br>
+    <div style="height:20px; width:20px;" 
+    [style.backgroundColor]="favCor">
+
+    </div>
+</div>
