@@ -1,5 +1,5 @@
 <!-- <form> -->
-  <div class="lineClass">First name
+<div class="lineClass">First name
     <input type="text" [(ngModel)]="user.fName">
     <br>
 </div>
@@ -22,21 +22,11 @@
         <option *ngFor="let country of 
         contries" [value]="country">
             {{country}}</option>
-        <!-- <option value="India">India</option>
-        <option value="India">USA</option>
-        <option value="India">Englan</option>
-        <option value="India">Canada</option>
-        <option value="India">AUS</option> -->
+
     </select>
     <br>
 </div>
 
-<div class="lineClass">available contries
-    <div *ngFor="let country of contries">
-        <label>{{country}}</label>
-        <br>
-    </div>
-</div>
 
 
 <div class="lineClass">User DOB
@@ -45,11 +35,10 @@
 </div>
 
 <div class="lineClass">User Gender
-    <!-- <input type="radio" name="gender" value="Male"> Male
-    <input type="radio" name="gender" value="Female"> Female -->
+
 
     <input type="radio" name="gender" [(ngModel)]="user.gender" value="Male"> Male
-    <input type="radio" name="gender"  [(ngModel)]="user.gender" value="Female"> Female
+    <input type="radio" name="gender" [(ngModel)]="user.gender" value="Female"> Female
 
     <br>
 </div>
@@ -64,12 +53,11 @@
 </div>
 
 <div class="lineClass">User favouite color
-    
-        <input type="color"
-         [(ngModel)]="user.favCor">
-        
-        <br>
-    </div>
+
+    <input type="color" [(ngModel)]="user.favCor">
+
+    <br>
+</div>
 
 
 
@@ -77,15 +65,7 @@
 <!-- </form> -->
 
 <div>
-    To check two way binding {{user.fName}} {{user.lName}}
-    <br> User country : {{user.userCountry}}
-    <br> User DOB : {{user.dobString}}
-    <br> User gender : {{user.gender}}
-    <br> User sing : {{user.cansing}}
-    <br> User dance : {{user.canDance}}
-    <br>
-    <div style="height:20px; width:20px;" 
-    [style.backgroundColor]="user.favCor">
+    To check two way binding {{ user | json }}
 
-    </div>
+
 </div>
